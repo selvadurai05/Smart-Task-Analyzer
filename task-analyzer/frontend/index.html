@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <h1>Smart Task Analyzer</h1>
+        <p>Score and prioritize your tasks with different strategies.</p>
+    </header>
+
+    <main class="app-main">
+        <!-- LEFT: INPUTS -->
+        <section class="card">
+            <h2 class="card-title">Task Input</h2>
+
+            <div class="field-group">
+                <label for="title">Title</label>
+                <input id="title" type="text" placeholder="e.g., Fix login bug">
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="due_date">Due Date</label>
+                    <input id="due_date" type="date">
+                </div>
+                <div class="field-group">
+                    <label for="estimated_hours">Estimated Hours</label>
+                    <input id="estimated_hours" type="number" step="0.25" placeholder="e.g., 3">
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="importance">Importance (1–10)</label>
+                    <input id="importance" type="number" min="1" max="10" placeholder="e.g., 8">
+                </div>
+                <div class="field-group">
+                    <label for="dependencies">Dependencies (IDs)</label>
+                    <input id="dependencies" type="text" placeholder="e.g., 1, 2">
+                </div>
+            </div>
+
+            <button class="btn primary" onclick="addTask()">Add Task</button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="field-group">
+                <label for="jsonInput">Paste JSON Tasks</label>
+                <textarea id="jsonInput" rows="6" placeholder='[{"id":1,"title":"Fix bug",...}, {...}]'></textarea>
+            </div>
+        </section>
+
+        <!-- RIGHT: CONTROLS + OUTPUT -->
+        <section class="right-panel">
+            <section class="card">
+                <h2 class="card-title">Analyze</h2>
+
+                <div class="field-group">
+                    <label for="strategy">Sorting Strategy</label>
+                    <select id="strategy">
+                        <option value="smart_balance">Smart Balance (Default)</option>
+                        <option value="fastest_wins">Fastest Wins (Low Effort)</option>
+                        <option value="high_impact">High Impact (Importance)</option>
+                        <option value="deadline_driven">Deadline Driven (Due Date)</option>
+                    </select>
+                </div>
+
+                <button id="analyzeBtn" class="btn accent" onclick="analyzeTasks()">
+                    Analyze Tasks
+                </button>
+
+                <p class="hint">
+                    Tip: Add a few tasks or paste JSON, then choose a strategy and click Analyze.
+                </p>
+            </section>
+
+            <section class="card output-card">
+                <h2 class="card-title">Results</h2>
+                <div id="output" class="output"></div>
+            </section>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
