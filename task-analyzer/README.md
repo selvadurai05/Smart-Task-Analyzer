@@ -230,6 +230,8 @@ On top of these components, different strategies apply different weightings. **F
 * Add pagination and filtering for large task lists.
 * Improve mobile UX and add light/dark mode toggle.
 
+<img width="1920" height="1080" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/67e44255-4faf-4188-b191-1493e55a87de" />
+
 ````
 
 ---
@@ -246,5 +248,3 @@ git commit -m "Smart Task Analyzer - assignment"
 git branch -M main
 git remote add origin <your-github-repo-url>
 git push -u origin main
-
-<img width="1920" height="1080" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/fa27d24d-1332-41b0-9bde-abd981b53179" />
