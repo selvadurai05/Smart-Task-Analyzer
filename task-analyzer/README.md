@@ -246,3 +246,5 @@ git commit -m "Smart Task Analyzer - assignment"
 git branch -M main
 git remote add origin <your-github-repo-url>
 git push -u origin main
+
+<img width="1920" height="1080" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/fa27d24d-1332-41b0-9bde-abd981b53179" />
